@@ -1,0 +1,29 @@
+<h3>予定詳細</h3>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>終日</th>
+      <th>メモ</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @schedule.id %></td>
+        <td><%= @schedule.title %></td>
+        <td><%= @schedule.start_date.to_fs(:date_jp) %></td>
+        <td><%= @schedule.end_date.to_fs(:date_jp) %></td>
+        <td><%= @schedule.done ? "○" : "" %></td>
+        <td><%= @schedule.memo %></td>
+      </tr>
+  </tbody>
+</table>
+
+<p><%= link_to "編集する", edit_schedule_path %></p>
+<p><%= link_to "戻る", schedules_path %></p>
